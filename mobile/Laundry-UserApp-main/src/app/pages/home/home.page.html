@@ -1,0 +1,64 @@
+<ion-header class="ion-no-border">
+    <ion-toolbar>
+        <ion-title mode="md">My Laundry</ion-title>
+        <ion-button (click)="cart()" slot="end" fill="clear">
+            <ion-icon src="../../../assets/small_icon/Path 3465.svg"></ion-icon>
+        </ion-button>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+    <ion-row class="ion-no-padding">
+        <ion-col class="ion-no-padding" size="12">
+            <div class="slidecontainer">
+                <ion-slides #mySlider mode="ios" pager="false" (ionSlideTap)="getIndex()" [options]="slideOpts">
+                    <ion-slide *ngFor="let l of discount">
+                        <div class="slide">
+                            <img src="{{l.imagePath + l.image}}">
+                            <div class="dark-layer">
+                                <p>{{l.title1}}</p>
+                                <h3>Upto {{l.discount}}<span *ngIf="l.type == 'Percentage'">%</span><span *ngIf="l.type == 'Amount'">$</span></h3>
+                                <h5>{{l.title2}}</h5>
+                            </div>
+                        </div>
+                    </ion-slide>
+                </ion-slides>
+            </div>
+        </ion-col>
+    </ion-row>
+    <div *ngIf="services.length != 0" class="ion-padding-start ion-padding-end">
+        <p class="label ion-margin-top">Our Services</p>
+    </div>
+    <div class="slider">
+        <div class="slider_div" *ngFor="let s of services" (click)="serviceDetail(s)">
+            <div class="ion-text-center img">
+                <img src="{{s.imagePath + s.image}}" />
+            </div>
+            <div class="ion-padding-start ion-margin-top ion-padding-end ion-text-center padding">
+                {{s.name}}
+            </div>
+        </div>
+    </div>
+    <div class="ion-padding-start ion-margin-top ion-padding-end">
+        <p class="label ion-margin-top">Active Orders</p>
+        <div class="order_active ion-padding-top" *ngFor="let item of data | slice:0:5" (click)="check(item.id)">
+            <ion-item lines="none">
+                <ion-thumbnail slot="start">
+                    <img src="../../../assets/product/order.png" height="35" width="35" />
+                </ion-thumbnail>
+                <ion-label>
+                    <h3>Order ID: {{item.order_id}}</h3>
+                    <p>Expected Delivery Date : <span>{{item.date}}</span></p>
+                </ion-label>
+            </ion-item>
+        </div>
+    </div>
+    <div class="img2" *ngIf="data?.length == 0 && token != null ">
+        <img src="../../../assets/no-data.png">
+    </div>
+    <div class="im3" *ngIf="token == null && data?.length == 0">
+        <img src="../../../assets/login.png">
+    </div>
+</ion-content>

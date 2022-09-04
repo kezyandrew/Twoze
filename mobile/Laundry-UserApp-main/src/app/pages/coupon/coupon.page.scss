@@ -1,0 +1,208 @@
+ion-header {
+    ion-toolbar {
+        ion-title {
+            --padding-start: 0px;
+            margin-left: -8px;
+            font-size: 17px;
+            font-family: proxi-extrabold;
+        }
+        ion-button {
+            font-size: 13px;
+            color: var(--blue-color) !important;
+            text-transform: capitalize;
+            font-family: proxi-regular;
+            --background: transparent;
+            --color: var(--blue-color);
+        }
+    }
+    .item {
+        --inner-padding-end: 0px;
+        --padding-start: 17px;
+        --padding-end: 17px;
+        margin-top: 7px;
+        margin-top: 23px;
+        ion-input {
+            background-color: #f9f9f9;
+            --padding-start: 22px;
+            font-size: 15px;
+            font-family: proxi-regular;
+            --color: var(--input-color);
+            --placeholder-opacity: 0.9;
+            margin-right: 15px;
+            height: 44px;
+            border-radius: 5px;
+        }
+        ion-button {
+            height: 44px;
+            background-color: var(--blue-color);
+            width: 103px;
+            border-radius: 5px;
+            margin: 0px;
+            font-family: proxi-regular;
+        }
+    }
+}
+
+ion-content {
+    $grey-light: hsl(200, 10%, 92%);
+    $grey: hsl(200, 10%, 85%);
+    $grey-dark: hsl(200, 10%, 70%);
+    $shadow: hsla(200, 20%, 20%, 0.25);
+    $red: #dc143c;
+    $bg: hsl(200, 0%, 100%);
+    $divider: $grey-light;
+    $border: $grey-dark;
+    $cutout-size: 1rem;
+    *,
+    *::after {
+        box-sizing: border-box;
+        margin: 0;
+    }
+    body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        color: hsl(200, 10%, 30%);
+        background-color: hsl(200, 10%, 96%);
+        background-image: linear-gradient(to bottom left, $grey-dark, $grey);
+    }
+    ion-col {
+        margin-bottom: 22px;
+    }
+    .ticket__body {
+        border-left: 1.5px dashed var(--blue-color);
+        border-bottom: 1.5px dashed var(--blue-color);
+        border-right: 1.5px dashed var(--blue-color);
+        border-bottom-left-radius: 6px;
+        border-bottom-right-radius: 6px;
+    }
+    .ticket {
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+        max-width: 24rem;
+        &__header,
+        &__body,
+        &__footer {
+            padding: 1.25rem;
+            background-color: $bg;
+        }
+        &__header {
+            font-size: 1.5rem;
+            border-bottom: none;
+            box-shadow: none;
+        }
+        &__wrapper {
+            border-radius: 0.375em 0.375em 0 0;
+            overflow: hidden;
+            border-top: 1.5px dashed var(--blue-color) !important;
+            border-left: 1.5px dashed var(--blue-color) !important;
+            border-right: 1.5px dashed var(--blue-color) !important;
+            h1 {
+                text-align: center;
+                margin-left: 30px;
+                font-size: 38px;
+                margin-top: 8px;
+            }
+            p {
+                margin-left: 20px;
+                margin-right: 20px;
+                margin-top: -10px;
+                font-size: 13px;
+                text-align: center;
+                font-family: proxi-regular;
+                span {
+                    font-family: 'proxi-bold';
+                    color: var(--blue-color);
+                }
+            }
+        }
+        &__divider {
+            position: relative;
+            height: $cutout-size;
+            background-color: $bg;
+            margin-left: ($cutout-size / 2);
+            margin-right: ($cutout-size / 2);
+            &::after {
+                content: '';
+                position: absolute;
+                height: 50%;
+                width: 100%;
+                top: 0;
+                border-bottom: 1.5px dashed var(--blue-color);
+            }
+        }
+        &__notch {
+            position: absolute;
+            left: ($cutout-size / 2) * -1;
+            width: $cutout-size;
+            height: $cutout-size;
+            overflow: hidden;
+            &::after {
+                content: '';
+                position: relative;
+                display: block;
+                width: ($cutout-size * 2);
+                height: ($cutout-size * 2);
+                right: 100%;
+                top: -50%;
+                border: ($cutout-size / 2) solid $bg;
+                border-radius: 50%;
+                box-shadow: inset 0 2px 4px $shadow;
+            }
+            &--right {
+                left: auto;
+                right: ($cutout-size / 2) * -1;
+                &::after {
+                    right: 0;
+                }
+            }
+        }
+        &__body {
+            border-top: none;
+            &>*+* {
+                margin-top: 1.5rem;
+                padding-top: 1.5rem;
+            }
+        }
+        .code {
+            height: 38px;
+            background-color: white !important;
+            width: 120px;
+            box-shadow: 0px 0px 6px 1px #dddddd;
+            padding: 11px;
+            font-size: 12px;
+            color: var(--blue-color);
+            border-radius: 6px;
+            text-align: center;
+        }
+        &__section {
+            &>*+* {
+                margin-top: 0.25rem;
+            }
+            &>h3 {
+                font-size: 1.125rem;
+                margin-bottom: 0.5rem;
+            }
+        }
+        &__header,
+        &__footer {
+            font-weight: bold;
+            font-size: 1.25rem;
+            display: flex;
+            justify-content: space-between;
+        }
+        &__footer {
+            /* border-top: 2px dashed $divider; */
+            border-radius: 0 0 0.325rem 0.325rem;
+        }
+    }
+    .left-padding {
+        --padding-left: 10px !important;
+        padding-left: 10px !important;
+    }
+    .right-padding {
+        --padding-right: 10px !important;
+        padding-right: 10px !important;
+    }
+}

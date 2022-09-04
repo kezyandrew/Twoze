@@ -1,0 +1,68 @@
+ion-header {
+    ion-toolbar {
+        ion-title {
+            --padding-start: 0px;
+            margin-left: -8px;
+            font-size: 17px;
+            font-family: proxi-extrabold;
+        }
+        ion-button {
+            font-size: 13px;
+            color: var(--blue-color) !important;
+            text-transform: capitalize;
+            font-family: proxi-regular;
+            --background: transparent;
+            --color: var(--blue-color);
+        }
+    }
+}
+
+ion-content {
+    .picker {
+        position: absolute;
+        margin-top: 74px;
+        margin-left: -34px;
+    }
+    .name {
+        font-size: 17px;
+        font-family: proxi-bold;
+        margin-top: 5px;
+        margin-bottom: 4px;
+    }
+    .email {
+        margin: 0px;
+        font-size: 12px;
+        font-family: proxi-regular;
+        ion-icon {
+            font-size: 6px;
+            padding-left: 17px;
+            padding-right: 17px;
+        }
+        span {
+            color: var(--blue-color);
+        }
+    }
+    ion-item {
+        h3 {
+            font-size: 15px;
+            font-family: pop-medium;
+            color: black;
+        }
+        h2 {
+            color: red;
+            font-family: pop-medium;
+            font-size: 15px;
+        }
+    }
+    .profile {
+        border-radius: 50%;
+    }
+}
+
+ion-footer {
+    ion-title {
+        font-size: 13px;
+        font-family: proxi-regular;
+        color: var(--blue-color);
+    }
+}

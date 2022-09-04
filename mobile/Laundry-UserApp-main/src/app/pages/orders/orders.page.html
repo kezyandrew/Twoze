@@ -1,0 +1,57 @@
+<ion-header class="ion-no-border">
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button mode="md" defaultHref="/tabs/home" text="">
+                <ion-icon src="../../../assets/icon/login.svg"></ion-icon>
+            </ion-back-button>
+        </ion-buttons>
+        <ion-title mode="md">Orders</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+
+
+    <div class="img" *ngIf="orders?.length == 0 && pastOrders?.length == 0 && token != null">
+        <img src="../../../assets/no-data.png">
+    </div>
+    <div class="img" *ngIf="orders?.length == 0 && pastOrders?.length == 0 && token == null">
+        <img src="../../../assets/ordersno.png">
+    </div>
+
+
+    <div *ngIf="orders?.length != 0" class="current-orders">
+        <h1>Current Orders</h1>
+        <div class="order-details" *ngFor="let item of orders">
+            <div class="main" (click)="check(item.id)">
+                <h3 class="order-headimg">Order ID : {{item?.order_id}} <span class="ion-float-right">{{item?.date}}</span></h3>
+                <p class="items"><span class="span1" *ngFor="let items of item?.child | slice:0:4">{{items?.name}},</span> <span class="ion-float-right">Items</span></p>
+                <p class="quantity">Service for Men <span class="ion-float-right">{{item?.child?.length}}</span></p>
+            </div>
+            <div class="bottom">
+                <ion-item class="ion-no-padding" lines="none">
+                    <h2 class="h2" (click)="check(item.id)">See Billing Details</h2>
+                    <ion-button slot="end" class="ion-no-padding" fill="clear" (click)="cancelOrder(item.id)">
+                        <ion-ripple-effect></ion-ripple-effect>
+                        Cancel Service </ion-button>
+                </ion-item>
+            </div>
+        </div>
+    </div>
+    <div class="past-orders ion-margin-top" *ngIf="pastOrders?.length != 0">
+        <h1>Past Orders</h1>
+        <div class="order-details" *ngFor="let item of pastOrders" (click)="check(item.id)">
+            <div class="main">
+                <h3 class="order-headimg">Order ID : {{item?.order_id}} <span class="ion-float-right">{{item?.date}}</span></h3>
+                <p class="items"><span class="span1" *ngFor="let items of item?.child | slice:0:4">{{items?.name}},</span> <span class="ion-float-right">Items</span></p>
+                <p class="quantity">Service for Men <span class="ion-float-right">{{item?.child?.length}}</span></p>
+            </div>
+            <div class="bottom">
+                <h2 class="past">See Billing Details </h2>
+            </div>
+        </div>
+    </div>
+</ion-content>

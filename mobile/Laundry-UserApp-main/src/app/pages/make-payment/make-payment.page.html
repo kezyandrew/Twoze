@@ -1,0 +1,99 @@
+<ion-header class="ion-no-border">
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button mode="md" defaultHref="tabs/home/cart" text=""></ion-back-button>
+        </ion-buttons>
+        <ion-title mode="md">Make a Payment</ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <p class="label ion-padding-start ion-padding-end">Details</p>
+
+    <div class="deails_div">
+        <p>Name: <span class="ion-float-right">{{profile}}</span></p>
+        <img class="img" src="../../../assets/item/Path 3516.png" />
+        <p>
+            Address:
+            <span class="ion-float-right address">{{address}}</span>
+        </p>
+        <img class="img" src="../../../assets/item/Path 3516.png" />
+        <p class="ion-margin-top delivery">
+            Delivery Date: <span class="ion-float-right">{{date}}</span>
+        </p>
+    </div>
+
+    <p class="label ion-margin-top ion-padding-top ion-padding-start ion-padding-end">
+        Total Items
+    </p>
+
+    <div class="deails_div">
+        <p class="item">
+            Your total item is <span class="ion-float-right">{{totalItems?.length}}</span>
+        </p>
+    </div>
+
+    <p class="ion-margin-top ion-padding-top label ion-padding-start ion-padding-end">
+        Included Items
+    </p>
+    <div class="deails_div">
+        <p class="item" *ngFor="let item of totalItems">
+            {{item?.name}}
+            <ion-text *ngFor="let i of item.service"><br> {{i?.type}} X {{i?.qty}}
+                <span class="ion-float-right">{{currency_}}{{i?.total}}</span>
+            </ion-text>
+        </p>
+
+        <div [hidden]="discount >= 0" class="coupon_div" [routerLink]="['/tabs/home/coupon']">
+            <div class="sub_div ion-text-center">You have a coupon to apply!</div>
+        </div>
+        <p *ngIf="discount >= 0" class="item-text">
+            Discount <span class="ion-float-right">{{currency_}}{{disPay}}</span>
+        </p>
+        <p class="item-text">
+            Sub Total <span class="ion-float-right">{{currency_}}{{totalPayment}}</span>
+        </p>
+    </div>
+
+    <p class="label ion-margin-top ion-padding-top ion-padding-start ion-padding-end">
+        Select a Payment Method
+    </p>
+
+    <div class="deails_div">
+        <ion-item *ngFor="let p of payment_div" (click)="checkboxChange(p)" class="ion-no-padding" lines="none">
+            <img *ngIf="p.img" src="{{p.img}}" alt="No Image Found" />
+            <p>{{p.name}}</p>
+            <ion-checkbox slot="end" [checked]="p.checked" mode="ios"></ion-checkbox>
+        </ion-item>
+    </div>
+    <div class="ion-margin-top margin-top">
+        <ion-row *ngIf="checkSelect == 'Paypal'" [hidden]="payment?.paypal == 0">
+            <ion-col>
+                <div id="paypal-button-container"></div>
+            </ion-col>
+        </ion-row>
+        <ion-button mode="ios" [hidden]="payment?.razorpay == 0" class="btn-payment" color="var(--blue-color)" (click)="payWithRazor()" expand="full" *ngIf="checkSelect == 'RazorPay'">
+            <ion-ripple-effect></ion-ripple-effect>Do a Payment With RazorPay
+        </ion-button>
+        <div>
+            <ion-row *ngIf="checkSelect == 'Stripe'" [hidden]="payment?.stripe == 0" class="ion-margin-top">
+                <ion-col>
+                    <form action="/" method="post" id="payment-form">
+                        <div class="form-row">
+                            <div id="element">
+                            </div>
+                            <div id="card-errors" role="alert"></div>
+                        </div>
+                        <ion-button [hidden]="isBtn == true" type="submit" (click)="stripePay()" mode="ios" class="btn-payment ion-margin-top" color="var(--blue-color)" expand="full">
+                            <ion-ripple-effect></ion-ripple-effect>Do a Payment With Stripe
+                        </ion-button>
+                    </form>
+                </ion-col>
+            </ion-row>
+        </div>
+    </div>
+
+    <ion-button mode="ios" class="btn-payment" color="var(--blue-color)" [hidden]="isBtn == true" (click)="cash()" expand="full" *ngIf="checkSelect == 'CashPay'">
+        <ion-ripple-effect></ion-ripple-effect>Do a Payment With Cash
+    </ion-button>
+
+</ion-content>

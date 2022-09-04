@@ -1,0 +1,27 @@
+ion-header {
+    ion-toolbar {
+        ion-title {
+            --padding-start: 0px;
+            margin-left: -8px;
+            font-size: 17px;
+            font-family: proxi-extrabold;
+        }
+        ion-button {
+            font-size: 13px;
+            color: var(--blue-color) !important;
+            text-transform: capitalize;
+            font-family: proxi-regular;
+            --background: transparent;
+            --color: var(--blue-color);
+        }
+    }
+}
+
+ion-content {
+    p {
+        font-size: 13px;
+        color: var(--input-color);
+        font-family: 'proxi-regular';
+        margin-bottom: 23px;
+    }
+}

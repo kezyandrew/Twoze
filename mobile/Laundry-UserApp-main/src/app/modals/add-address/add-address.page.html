@@ -1,0 +1,29 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title mode="md">Add Address</ion-title>
+        <ion-button (click)="detect()" mode="ios" slot="end" fill="clear">
+            <ion-icon src="../../../assets/Profile/aim.svg" class="ion-margin-end"></ion-icon>
+            Detect
+        </ion-button>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div class="ion-padding first">
+        <ion-input [(ngModel)]="label" placeholder="Give label to address"></ion-input>
+        <span class="err" *ngIf="label == '' && isAddAddress == false">{{err.label[0]}}</span>
+        <ion-textarea [(ngModel)]="addr1" placeholder="Add your address" rows="4" cols="30">
+
+
+        </ion-textarea>
+
+        <span class="err" *ngIf="addr1 == '' && isAddAddress == false">{{err.addr1[0]}}</span>
+    </div>
+    <div id="map"></div>
+</ion-content>
+
+<ion-footer class="ion-no-border">
+    <ion-toolbar class="ion-no-padding">
+        <ion-button (click)="addAddress()" [disabled]="isAdd == false" mode="md" expand="full" color="var(--blue-color)">Add This Address</ion-button>
+    </ion-toolbar>
+</ion-footer>

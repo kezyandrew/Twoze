@@ -1,0 +1,44 @@
+<ion-header class="ion-no-border">
+    <ion-toolbar>
+        <ion-title class="ion-margin-start" mode="md">Profile</ion-title>
+
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <div class="ion-text-center ion-margin-top" (click)=openViewer()>
+        <img class="profile" src="{{profile?.imagePath + profile?.image}}" height="123px" width="123px">
+    </div>
+    <div class="ion-text-center">
+        <p class="name">{{profile?.name}}</p>
+        <p class="email">{{profile?.email}}
+            <ion-icon [src]="image"></ion-icon>
+            <span (click)="profilego()">Edit Profile</span>
+        </p>
+    </div>
+    <div class="ion-padding">
+        <div>
+            <img src="../../../assets/item/Path 3516.png">
+            <ion-item button [routerLink]="['/manage-address']" class="ion-no-padding" lines="none">
+                <h3>Manage Address</h3>
+            </ion-item>
+            <img src="../../../assets/item/Path 3516.png">
+            <ion-item button [routerLink]="['/terms']" class="ion-no-padding" lines="none">
+                <h3>Terms of Use</h3>
+            </ion-item>
+            <img src="../../../assets/item/Path 3516.png">
+            <ion-item button [routerLink]="['/privacy']" class="ion-no-padding" lines="none">
+                <h3>Privacy Policy</h3>
+            </ion-item>
+            <img src="../../../assets/item/Path 3516.png">
+            <ion-item button (click)="logout()" class="ion-no-padding" lines="none">
+                <h2>Logout</h2>
+            </ion-item>
+            <img src="../../../assets/item/Path 3516.png">
+        </div>
+    </div>
+</ion-content>
+<ion-footer class="ion-no-border">
+    <ion-toolbar>
+        <ion-title class="ion-text-center">App Version : {{data?.app_version}}</ion-title>
+    </ion-toolbar>
+</ion-footer>

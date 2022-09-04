@@ -1,0 +1,36 @@
+<ion-header class="ion-no-border">
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button (click)="close()" mode="md" defaultHref="tabs/profile" text=""></ion-back-button>
+        </ion-buttons>
+        <ion-title mode="md">Manage Address</ion-title>
+        <ion-button [hidden]="isFrom == 'cart'" (click)="address()" slot="end" fill="clear">
+            +ADD
+        </ion-button>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding-top">
+    <div class="ion-margin-top">
+        <div class="address-div" *ngFor="let item of addressDiv">
+            <div class="ion-padding-start ion-padding-end">
+                <h1>
+                    <ion-icon src="../../../assets/Profile/pin.svg"></ion-icon> {{item.label}}</h1>
+                <p>{{item.addr1 | slice:0:100}}..</p>
+            </div>
+            <div class="bottom">
+                <ion-item class="ion-no-padding" lines="none">
+                    <ion-button (click)="selectAddress(item)" mode="ios" class="green" fill="clear">
+                        Select This Address
+                    </ion-button>
+                    <ion-button [disabled]="isDelete == false" (click)="deleteAddress(item.id)" mode="ios" class="red" fill="clear" slot="end">
+                        Remove Address
+                    </ion-button>
+                </ion-item>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="addressDiv.length == 0" class="address">
+        <img src="../../../assets/addr2.png">
+    </div>
+</ion-content>

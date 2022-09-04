@@ -1,0 +1,51 @@
+<ion-header class="ion-no-border">
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button mode="md" defaultHref="/tabs/home/make-payment" text=""></ion-back-button>
+        </ion-buttons>
+        <ion-title mode="md">Apply Coupon Code</ion-title>
+        <ion-button slot="end" fill="clear">
+            <ion-icon src="../../../assets/small_icon/Path 3465.svg"></ion-icon>
+        </ion-button>
+    </ion-toolbar>
+    <ion-item class="ion-no-padding" lines="none">
+        <ion-input readonly="true" value="{{codeCheck}}" [(ngModel)]="code" placeholder="Enter coupon code"></ion-input>
+        <ion-button (click)="checkCoupon()" color="var(--blue-color)">Apply</ion-button>
+    </ion-item>
+</ion-header>
+
+<ion-content>
+
+    <div class="ion-padding">
+        <ion-row>
+            <ion-col size="6" (click)="checkId(item)" *ngFor="let item of coupons;let i = index" [ngClass]="{
+                'right-padding': i % 2 == 0,
+                'left-padding': i % 2 != 0
+                }" class="ion-no-padding ion-margin-bottom">
+                <article class="ticket">
+                    <footer class="ticket__wrapper">
+                        <div class="ticket__header">
+                            <h1>{{item.discount}}<span *ngIf="item.type == 'Percentage'">%</span><span *ngIf="item.type == 'Amount'">
+                                {{currency}}
+                            </span></h1>
+                        </div>
+                        <div>
+                            <p>Offer code is valid upto <span>{{item.end_date | date: 'dd-MM-yyyy'}}</span></p><br>
+                        </div>
+                    </footer>
+                    <div class="ticket__divider">
+                        <div class="ticket__notch"></div>
+                        <div class="ticket__notch ticket__notch--right"></div>
+                    </div>
+                    <div class="ticket__body">
+                        <section class="ticket__section">
+                            <div class="code">
+                                {{item.code}}
+                            </div>
+                        </section>
+                    </div>
+                </article>
+            </ion-col>
+        </ion-row>
+    </div>
+</ion-content>

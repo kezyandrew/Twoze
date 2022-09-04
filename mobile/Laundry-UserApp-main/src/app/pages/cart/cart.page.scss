@@ -1,0 +1,146 @@
+ion-header {
+    ion-toolbar {
+        ion-title {
+            --padding-start: 0px;
+            margin-left: -8px;
+            font-size: 17px;
+            font-family: proxi-extrabold;
+        }
+    }
+}
+
+ion-content {
+    .header-section {
+        ion-textarea {
+            background-color: #F9F9F9;
+            font-size: 15px;
+            border-radius: 8px;
+            font-family: proxi-regular;
+            --padding-start: 15px;
+            --padding-top: 12px;
+        }
+        .future {
+            color: #4AB237;
+            font-size: 13px;
+            font-family: proxi-regular;
+            padding-left: 10px;
+        }
+    }
+    .title {
+        font-size: 15px;
+        font-family: proxi-bold;
+        padding-top: 3px;
+        padding-left: 8px;
+        padding-right: 8px;
+        span {
+            font-size: 13px;
+            font-family: proxi-regular;
+            color: var(--blue-color);
+        }
+    }
+    .hr1 {
+        margin-top: 16px;
+        width: 100%;
+    }
+    hr {
+        height: 0px;
+        border: 0.2px dashed #dddddd;
+        margin-top: 0px;
+    }
+    .date {
+        font-size: 13px;
+        font-family: proxi-regular;
+        margin-top: 21px;
+        color: var(--input-color);
+        padding-left: 10px;
+        padding-right: 10px;
+        span {
+            color: var(--blue-color);
+        }
+    }
+    .item-heading {
+        margin-top: 32px;
+        font-size: 15px;
+        font-family: proxi-bold;
+        padding-left: 34px;
+        padding-right: 28px;
+        span {
+            color: var(--blue-color);
+            font-size: 13px;
+            font-family: proxi-regular;
+        }
+    }
+    .cart-data {
+        background-color: #F9F9F9;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        padding-left: 15px;
+        padding-right: 15px;
+        margin-top: 13px;
+        .padding {
+            padding-top: 6px;
+        }
+        ion-item {
+            --padding-top: 5px;
+            --background: transparent;
+            --inner-padding-end: 0px;
+            --inner-padding-start: 0px;
+            --padding-start: 0px;
+            .img {
+                object-fit: scale-down;
+                height: 63px;
+                width: 63px;
+                margin-top: -11px;
+                margin-right: 10px;
+            }
+            h3 {
+                font-size: 15px;
+                font-family: proxi-bold;
+            }
+            span {
+                font-size: 13px;
+                font-family: proxi-regular;
+            }
+            p {
+                font-size: 13px;
+                margin-bottom: 7px;
+                font-family: proxi-regular;
+                span {
+                    font-size: 18px;
+                    font-family: proxi-regular;
+                    color: var(--blue-color);
+                }
+            }
+        }
+        .hr {
+            margin-bottom: 3px;
+        }
+    }
+}
+
+ion-footer {
+    ion-toolbar {
+        --padding-start: 15px;
+        --padding-end: 15px;
+    }
+    p {
+        font-size: 17px;
+        font-family: proxi-regular;
+        ion-text {
+            font-size: 22px;
+            color: var(--blue-color);
+            margin-left: 6px;
+        }
+    }
+    ion-button {
+        height: 38px;
+        background-color: var(--blue-color);
+        font-size: 13px;
+        font-family: proxi-regular;
+        text-transform: capitalize;
+        width: 116px;
+        overflow: hidden;
+        border-radius: 38px;
+        margin-top: 6px;
+    }
+}

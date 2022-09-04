@@ -1,0 +1,35 @@
+ion-content {
+    .img {
+        left: 0;
+        right: 0;
+        text-align: center;
+        top: 18%;
+        position: absolute;
+    }
+    .bottom {
+        position: absolute;
+        left: 0;
+        right: 0;
+        text-align: center;
+        padding-left: 40px;
+        color: #999999;
+        padding-right: 40px;
+        bottom: 5%;
+        font-size: 13px;
+        font-family: proxi-regular;
+        span {
+            color: var(--blue-color);
+            font-family: proxi-bold;
+        }
+        ion-button {
+            font-size: 13px;
+            color: var(--blue-color);
+            font-family: proxi-bold;
+            text-transform: capitalize;
+            margin-top: 20px;
+            ion-icon {
+                margin-left: 17px;
+            }
+        }
+    }
+}

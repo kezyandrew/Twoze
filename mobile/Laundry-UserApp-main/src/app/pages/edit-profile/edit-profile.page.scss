@@ -1,0 +1,104 @@
+ion-header {
+    ion-toolbar {
+        ion-title {
+            --padding-start: 0px;
+            margin-left: -8px;
+            font-size: 17px;
+            font-family: proxi-extrabold;
+        }
+        ion-button {
+            font-size: 13px;
+            color: var(--blue-color) !important;
+            text-transform: capitalize;
+            font-family: proxi-regular;
+            --background: transparent;
+            --color: var(--blue-color);
+        }
+    }
+}
+
+ion-content {
+    .picker {
+        position: absolute;
+        margin-top: 74px;
+        margin-left: -34px;
+    }
+    .profile {
+        border-radius: 50%;
+    }
+    .input-div {
+        ion-label {
+            font-family: proxi-regular;
+            font-size: 13px;
+        }
+        ion-input {
+            margin-top: 12px;
+            margin-bottom: 13px;
+            height: 44px;
+            background-color: #F5F5F5;
+            border-radius: 7px;
+            font-size: 15px;
+            font-family: proxi-regular;
+            --padding-start: 20px;
+            color: var(--input-color);
+            --placeholder-opacity: 1;
+        }
+    }
+    .padding {
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-bottom: 20px;
+        position: absolute;
+        top: 32%;
+    }
+    .number-input {
+        background: var(--ion-color-sky);
+        border-radius: 22px;
+        height: 44px;
+        padding: 4px 4px;
+        display: flex;
+        position: relative;
+        .code-div {
+            border-right: 1px solid var(--ion-border-color);
+        }
+        .number-div {
+            padding-left: 8px;
+            .input-div {
+                padding-left: 3px;
+                ion-input {
+                    font-size: 15px;
+                    font-family: "Poppins-Medium";
+                    --padding-top: 9px;
+                    position: relative;
+                    top: -7px;
+                }
+            }
+        }
+        .button-div {
+            width: 25px;
+            .btn-clear {
+                --padding-start: 0px;
+                --padding-end: 0px;
+                margin-top: 0px;
+            }
+        }
+    }
+    .number {
+        font-family: proxi-regular;
+        font-size: 13px;
+    }
+}
+
+ion-footer {
+    ion-toolbar {
+        ion-button {
+            margin: 0;
+            background-color: var(--blue-color);
+            height: 60px;
+            padding: 0px;
+            font-size: 17px;
+            font-family: proxi-regular;
+            text-transform: capitalize;
+        }
+    }
+}

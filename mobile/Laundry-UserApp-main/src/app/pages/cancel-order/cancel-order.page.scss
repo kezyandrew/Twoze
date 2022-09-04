@@ -1,0 +1,35 @@
+ion-toolbar {
+    ion-title {
+        font-size: 17px;
+        font-family: proxi-bold;
+    }
+}
+
+ion-content {
+    .cancel {
+        padding-left: 55px;
+        padding-right: 55px;
+        margin-top: 15px;
+        font-size: 15px;
+        font-family: proxi-regular;
+    }
+    .bottom {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 7%;
+        .back {
+            margin: 0px;
+            padding: 0px;
+            font-size: 13px;
+            color: var(--input-color);
+        }
+        .remove {
+            margin: 0px;
+            padding: 0px;
+            font-size: 13px;
+            font-family: proxi-regular;
+            color: var(--blue-color);
+        }
+    }
+}

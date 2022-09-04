@@ -1,0 +1,7 @@
+{
+  "name": "LONDRE",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

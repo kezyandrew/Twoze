@@ -1,0 +1,116 @@
+ion-header {
+    ion-toolbar {
+        ion-title {
+            --padding-start: 0px;
+            margin-left: 8px;
+            font-size: 17px;
+            font-family: proxi-extrabold;
+        }
+        ion-button {
+            font-size: 13px;
+            color: var(--blue-color) !important;
+            text-transform: capitalize;
+            font-family: proxi-regular;
+            --background: transparent;
+            --color: var(--blue-color);
+        }
+    }
+}
+
+ion-content {
+    .img {
+        position: absolute;
+        left: 0;
+        right: 0;
+        text-align: center;
+        top: 26%;
+    }
+    h1 {
+        font-size: 15px;
+        font-family: proxi-bold;
+        padding-left: 20px;
+        margin-top: 25px;
+        margin-bottom: 15px;
+    }
+    .order-details {
+        height: 163px;
+        background-color: #F9F9F9;
+        margin-bottom: 22px;
+        .main {
+            padding-top: 20px;
+            padding-bottom: 9px;
+            padding-left: 19px;
+            padding-right: 19px;
+        }
+        .order-headimg {
+            margin: 0px;
+            font-size: 17px;
+            font-family: proxi-regular;
+            span {
+                font-size: 13px;
+                font-family: proxi-bold;
+                color: var(--blue-color);
+            }
+        }
+        ion-item {
+            --inner-padding-end: 0;
+            --background: transparent;
+            ion-button {
+                color: red;
+                font-family: proxi-regular;
+                text-transform: capitalize;
+            }
+        }
+        .items {
+            font-size: 15px;
+            font-family: proxi-bold;
+            margin: 0;
+            margin-top: 18px;
+            .span1 {
+                font-size: 15px;
+                font-family: proxi-bold;
+            }
+            span {
+                font-size: 13px;
+                font-family: proxi-regular;
+            }
+        }
+        .quantity {
+            margin: 0px;
+            font-size: 12px;
+            font-family: proxi-regular;
+            margin-top: 6px;
+            span {
+                font-size: 13px;
+            }
+        }
+        .bottom {
+            height: 44px;
+            background-color: #F1F1F1;
+            margin-top: 5px;
+            padding-left: 16px;
+            padding-right: 16px;
+            position: absolute;
+            margin-top: 12px;
+            width: 100%;
+            .h2 {
+                margin-top: 4px;
+                font-size: 13px;
+                font-family: proxi-regular;
+                color: #28C95E;
+                span {
+                    color: #FF4343;
+                }
+            }
+        }
+    }
+    .past-orders {
+        margin-top: 43px;
+    }
+    .past {
+        margin-top: 15px;
+        font-size: 13px;
+        font-family: proxi-regular;
+        color: #28C95E;
+    }
+}

@@ -1,0 +1,137 @@
+ion-header {
+    ion-toolbar {
+        ion-title {
+            --padding-start: 0px;
+            margin-left: -8px;
+            font-size: 17px;
+            font-family: proxi-extrabold;
+        }
+        ion-button {
+            font-size: 13px;
+            --color: #FF4343 !important;
+            text-transform: capitalize;
+            font-family: proxi-regular;
+            --background: transparent;
+        }
+    }
+}
+
+ion-label {
+    font-family: 'proxi-regular';
+    font-weight: bold;
+    h4 {
+        font-size: 14px;
+        color: darkgray;
+        margin-top: 6px;
+        margin-bottom: 6px;
+        margin-left: 8px;
+    }
+    span {
+        color: darkgray !important;
+    }
+}
+
+ion-content {
+    .order {
+        font-size: 15px;
+        font-family: proxi-regular;
+        color: #2CA558;
+        text-transform: uppercase;
+    }
+    .orders {
+        font-size: 15px;
+        font-family: proxi-regular;
+        color: red;
+        text-transform: uppercase;
+    }
+    h1 {
+        font-family: proxi-thin;
+        font-size: 25px;
+    }
+    .img {
+        width: 100%;
+        padding-left: 17px;
+        padding-right: 19px;
+    }
+    .label {
+        font-size: 15px;
+        font-family: 'proxi-bold';
+    }
+    .deails_div {
+        padding-top: 8px;
+        padding-bottom: 5px;
+        background-color: #f9f9f9;
+        p {
+            padding-left: 14px;
+            padding-right: 14px;
+            font-size: 15px;
+            font-family: proxi-regular;
+            margin-bottom: 18px;
+            span {
+                color: var(--input-color);
+            }
+        }
+        .address {
+            margin-left: 102px;
+            font-size: 12px;
+            margin-top: -14px;
+            text-align: justify;
+        }
+        .item {
+            padding-left: 14px;
+            padding-right: 14px;
+            margin-bottom: 33px;
+            span {
+                color: black;
+                font-size: 15px;
+                font-family: proxi-regular;
+            }
+        }
+        .coupon_div {
+            padding-top: 7px;
+            p {
+                margin-top: 0px !important;
+                margin-bottom: 0px !important;
+            }
+            .red {
+                color: red;
+            }
+            .code {
+                color: var(--blue-color);
+            }
+        }
+        .item-text {
+            font-family: proxi-bold;
+            font-size: 15px;
+            margin-top: 23px;
+            margin-bottom: 5px !important;
+            span {
+                color: var(--blue-color);
+            }
+        }
+        ion-item {
+            --background: transparent;
+            --inner-padding-end: 0px;
+            --padding-start: 18px;
+            margin-bottom: 0px !important;
+            p {
+                font-size: 15px;
+                font-family: proxi-regular;
+                margin-left: 13px;
+            }
+            ion-checkbox {
+                --background: #F1F1F1;
+                --border-color: #f9f9f9;
+                --size: 26px;
+                --background-checked: var(--blue-color);
+                --checkmark-color: white;
+                --checkmark-width: 2px;
+            }
+            img {
+                object-fit: scale-down;
+                height: 20px;
+                width: 24px;
+            }
+        }
+    }
+}
